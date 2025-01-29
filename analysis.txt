@@ -1,0 +1,6 @@
+1. When comparing the speed of the CPU against the GPU it is clear that the CPU is faster in this specific case
+2. There are a few reasons why the performance of the GPU in this case appears to be worse. Firstly it is important to notice the total time spent in kernel for the GPU is siginificantly 
+less than the time spent elsewhere. Understanding this, we can see that most of the time consumption for the GPU comes from the original data transfer using cudaMemcpy, transferring 
+over the vectors consumed the most time introducing an aspect to consider when comparing times. That being said, if perhaps we were working on a larger dataset the time commitment
+spent on transferring data originally may become less significany, but for this small problem it plays a factor. Finally, when testing this program I was utilizing one of the older 
+gpus within the palmetto cluster which may have introduced an additional factor of latency.
