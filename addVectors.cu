@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <stdlib.h>
 #include <cuda.h>
 #define N 1024 * 1024
